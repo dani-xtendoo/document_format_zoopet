@@ -403,10 +403,16 @@
                                 <div style="width:29%; display:block;float:left;margin-top:-15px;">
                                     <!--<span t-field="move_line.move_id.sale_line_id.name"/> -->
                                     <p t-if="o.picking_type_code == 'outgoing'">
-                                        <span t-field="move_line.move_id.sale_line_id.name"/>
+                                        <t t-set="productName" t-value="move_line.move_id.sale_line_id.name"></t>
+                                        <t t-set="name_num" t-value="productName.find(']') + 1 "></t>
+                                        <t t-set="name" t-value="productName[name_num:]"></t>
+                                        <span t-esc="name"/>
                                     </p>
                                     <p t-if="o.picking_type_code == 'incoming'">
-                                        <span t-field="move_line.product_id.sudo().description_pickingin"/>
+                                        <t t-set="productName" t-value="move_line.product_id.sudo().description_pickingin"></t>
+                                        <t t-set="name_num" t-value="productName.find(']') + 1 "></t>
+                                        <t t-set="name" t-value="productName[name_num:]"></t>
+                                        <span t-esc="name"/>
                                     </p>
                                 </div>
                               <!-- Fin descripcion -->
