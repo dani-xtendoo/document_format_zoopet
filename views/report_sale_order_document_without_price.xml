@@ -10,7 +10,7 @@
                 model="sale.order"
                 report_type="qweb-pdf"
                 name="document_format_zoopet.report_saleorder_without_price"
-                file="sale.report_saleorder_document"
+                file="sale.report_saleorder_document_without_price"
                 print_report_name="(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)"
         />
 
