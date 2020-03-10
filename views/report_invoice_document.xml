@@ -980,6 +980,34 @@
                         </p>
                     </div>
 
+                <!-- Inversion de sujeto pasivo -->
+
+                <t t-if="o.sale_type_id.name == 'Serie C'">
+                    <!-- Porte y precio -->
+                    <t t-set="PortPrice" t-value="0"></t>
+                    <!-- Fin Porte y precios -->
+
+                     <t t-foreach="o.invoice_line_ids" t-as="line">
+
+                         <t t-if="line.product_id.default_code == 'ENT0'">
+
+                             <t t-set="PortPrice" t-value="line.price_unit"></t>
+
+                         </t>
+
+                     </t>
+
+                    <t t-if="PortPrice != 0">
+                        <span>Inversión del sujeto pasivo</span>
+                    </t>
+
+
+
+                </t>
+
+
+                <!-- Fin inversión del sujeto pasivo-->
+
             </xpath>
 
         </template>
