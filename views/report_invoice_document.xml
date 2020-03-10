@@ -745,7 +745,7 @@
                            -<span t-esc="'%.2f'%total_discount3"></span>€
                        </div>
                   </div>
-                    <hr style="height:2px;width:100%;background-color:black;"></hr>
+                    <hr t-if="total_discount3 != 0 or total_discount2 != 0 or total_discount1 != 0" style="height:2px;width:100%;background-color:black;"></hr>
                      <div t-if="total_discount3 != 0 or total_discount2 != 0 or total_discount1 != 0">
                        <div style="width:50%;float:left;margin-top:-15px;">
                            <span>Total descuentos</span>
